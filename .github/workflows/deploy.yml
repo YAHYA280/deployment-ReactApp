@@ -16,7 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16' # or any version >= 16
+
+      - name: Verify npm version
+        run: npm -v
 
       - name: Install dependencies
         run: npm install
@@ -26,7 +29,9 @@ jobs:
 
       - name: Deploy to server
         run: |
-          rsync -avz --delete ./build/ /var/www/html/
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          rsync -avz -e "ssh -i private_key" ./build/ $SERVER_USER@$SERVER_IP:/path/to/your/deployment/directory
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
