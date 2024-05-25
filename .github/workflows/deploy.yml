@@ -13,11 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Verify npm version
-        run: npm -v
-
-
-
+  
       - name: Build the React app
         run: npm run build
 
