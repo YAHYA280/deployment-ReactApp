@@ -1,14 +1,11 @@
 import "./App.css";
-import { Test } from "./components/Test";
 import { HelloPage } from "./components/HelloPage";
+import { HomePage } from "./components/HomePage";
 
 function App() {
   return (
     <div className="App">
-      <Test />
-
-      <h1>don't press this button</h1>
-      <button>tets</button>
+      <HomePage />
       <HelloPage />
     </div>
   );
