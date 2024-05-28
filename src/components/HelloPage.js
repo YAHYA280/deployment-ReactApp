@@ -6,7 +6,11 @@ export const HelloPage = () => {
       <div>This project was made by : Yahya Elmokhtari & Souhail Elmahdani</div>
       <div>for more details please visit our repositorie in github : </div>
       <div>
-        <a href="https://github.com/YAHYA280/deyployment-ReactApp">
+        <a
+          rel="noreferrer"
+          target="_blank"
+          href="https://github.com/YAHYA280/deyployment-ReactApp"
+        >
           Github Project repositorie
         </a>
       </div>
